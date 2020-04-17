@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import tasks from './sample/tasks.json';
+import Tasks from './components/Tasks';
 
-function App() {
-  return (
-    <div>First commit</div>
-  );
+class App extends Component {
+  
+  state = {
+    tasks: tasks
+  } 
+
+  render() {
+    
+    return (
+      <Tasks tasks={this.state.tasks}/>
+    );
+  }
 }
 
 export default App;
