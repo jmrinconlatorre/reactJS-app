@@ -8,6 +8,7 @@ class FormTasks extends Component {
     }
 
     onSubmit = ev => {
+        this.props.addTask(this.state.title, this.state.description);
         ev.preventDefault();
     }
 
@@ -18,7 +19,6 @@ class FormTasks extends Component {
     }
 
     render() {
-
         return (
             <form onSubmit={this.onSubmit}>
                 <input type="text" name="title" placeholder="Name of task" onChange={this.onChange} value={this.state.title} />

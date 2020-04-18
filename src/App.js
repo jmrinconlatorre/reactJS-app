@@ -10,11 +10,25 @@ class App extends Component {
     tasks: tasks
   } 
 
+  addTask = (title, description) => {
+
+    const newTask = {
+      id: this.state.tasks.length,
+      title: title,
+      description: description
+    };
+
+    this.setState({
+      tasks: [...this.state.tasks, newTask]
+    });
+
+  }
+
   render() {
     
     return (
       <div>
-        <FormTasks/>
+        <FormTasks addTask={this.addTask}/>
         <Tasks tasks={this.state.tasks}/>
       </div>
     );          
