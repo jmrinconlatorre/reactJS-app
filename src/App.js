@@ -3,6 +3,7 @@ import './App.css';
 import tasks from './sample/tasks.json';
 import Tasks from './components/Tasks';
 import FormTasks from './components/FormTasks'
+import Posts from './components/Posts'
 
 class App extends Component {
   
@@ -49,8 +50,13 @@ class App extends Component {
     
     return (
       <div>
-        <FormTasks addTask={this.addTask}  />
-        <Tasks tasks={this.state.tasks} deleteTask={this.deleteTask} checkDone={this.checkDone}/>
+        <FormTasks addTask={this.addTask}/>
+        <Tasks 
+          tasks={this.state.tasks} 
+          deleteTask={this.deleteTask} 
+          checkDone={this.checkDone}
+        />
+        <Posts/>
       </div>
     );          
   }
